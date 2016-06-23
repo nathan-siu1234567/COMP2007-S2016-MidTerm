@@ -14,6 +14,10 @@ namespace COMP2007_S2016_MidTerm
         {
             
         }
-        
+
+        protected void TodoGridView_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+
+        }
     }
 }
