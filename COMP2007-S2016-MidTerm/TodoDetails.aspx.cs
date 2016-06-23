@@ -9,14 +9,19 @@ using System.Web.UI.WebControls;
 using COMP2007_S2016_MidTerm.Models;
 using System.Web.ModelBinding;
 using System.Linq.Dynamic;
-
+/**
+ * Name:Nahtan siu
+ * 200281793
+ * file description:COde behind for todolist details
+ * 
+ * */
 namespace COMP2007_S2016_MidTerm
 {
     public partial class TodoDetails : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if ((!IsPostBack) && (Request.QueryString.Count > 0))
+            if ((!IsPostBack) && (Request.QueryString.Count > 0))// get the todo id
             {
                 this.GetTodo();
             }
@@ -46,12 +51,12 @@ namespace COMP2007_S2016_MidTerm
 
         protected void CancelButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/TodoList.aspx");
+            Response.Redirect("~/TodoList.aspx"); //redirect
         }
 
         protected void SaveButton_Click(object sender, EventArgs e)
         {
-            using (TodoConnection db = new TodoConnection())
+            using (TodoConnection db = new TodoConnection())//connect
             {
 
 
@@ -76,11 +81,11 @@ namespace COMP2007_S2016_MidTerm
                 newTodo.TodoNotes = TodoNotesTextBox.Text;
                 newTodo.Completed = CompletedCheckBox.Checked;
 
-                if (TodoID == 0)
+                if (TodoID == 0)//if new record 
                 {
                     db.Todos.Add(newTodo);
                 }
-                db.SaveChanges();
+                db.SaveChanges();// save shanges
                 Response.Redirect("~/TodoList.aspx");
             }
         }

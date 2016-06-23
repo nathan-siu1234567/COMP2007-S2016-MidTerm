@@ -9,6 +9,12 @@ using System.Web.UI.WebControls;
 using COMP2007_S2016_MidTerm.Models;
 using System.Web.ModelBinding;
 using System.Linq.Dynamic;
+/**
+ * Name:Nahtan siu
+ * 200281793
+ * file description:COde behind for todolist
+ * 
+ * */
 
 namespace COMP2007_S2016_MidTerm
 {
@@ -87,6 +93,7 @@ namespace COMP2007_S2016_MidTerm
             // refresh the grid
             this.GetTodos();
         }
+        
 
         protected void TodoGridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
@@ -97,6 +104,7 @@ namespace COMP2007_S2016_MidTerm
             this.GetTodos();
         }
 
+        //this method adds font awesome carrot when sorting
         protected void TodoGridView_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (IsPostBack)
