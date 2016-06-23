@@ -20,7 +20,7 @@
                 </div>
      <asp:GridView runat="server" CssClass="table table-bordered table-striped table-hover"
                     ID="TodoGridView" AutoGenerateColumns="False" AllowSorting="true" OnSorting="TodoGridView_Sorting" OnRowDeleting="TodoGridView_RowDeleting" DataKeyNames="TodoID" 
-         AllowPaging="true" PageSize="3" PagerStyle-CssClass="pagination-ys" OnPageIndexChanging="TodoGridView_PageIndexChanging" >
+         AllowPaging="true" PageSize="3" PagerStyle-CssClass="pagination-ys" OnPageIndexChanging="TodoGridView_PageIndexChanging" OnRowDataBound="TodoGridView_RowDataBound" >
          <Columns>
               <asp:BoundField DataField="TodoID" HeaderText="ID" Visible="true" SortExpression="TodoID" />
                         <asp:BoundField DataField="TodoName" HeaderText="Todo Name" Visible="true" SortExpression="TodoName" />
